@@ -49,6 +49,7 @@ export class DataHelper {
 		'transport-belt': Dictionary<JsonTransportBelt>;
 		// resource: Dictionary<any>;
 	};
+
 	constructor(dictionaries: { [key: string]: object }) {
 		this.dictionaries = {
 			'assembling-machine': new Dictionary<JsonAssemblingMachine>(

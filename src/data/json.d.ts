@@ -1,4 +1,4 @@
-export type PrimitiveType =
+export type P_Type =
 	| 'assembling-machine'
 	| 'boiler'
 	| 'fluid'
@@ -14,25 +14,32 @@ export type PrimitiveType =
 	| 'solar-panel'
 	| 'technology'
 	| 'transport-belt';
-export type PrimitiveEffects = {
+export type P_Effects = {
 	[name: string]: boolean;
 };
-export type PrimitiveCraftingCategories = {
+export type P_CraftingCategories = {
 	[name: string]: boolean;
 };
-export type PrimitiveFuelCategories = {
+export type P_FuelCategories = {
 	[name: string]: boolean;
 };
-export type PrimitiveMultiplier = number;
-export type PrimitiveEnergyUsage = number;
-export type PrimitiveTemperature = number;
+export type P_Multiplier = number;
+export type P_EnergyUsage = number;
+export type P_Temperature = number;
+
+type F_Name = {
+	name: string;
+	localised_name: string[];
+};
+
+// Groups, aliases
 
 /**
- * Groups, aliases
+ * Correlates with <Building />
  */
-export type JsonGroupBuilding =
-	| // Buildings that produce stuff:
-	(JsonAssemblingMachine | JsonFurnace)
+export type JsonBuilding =
+	| JsonAssemblingMachine
+	| JsonFurnace
 	| JsonBoiler
 	| JsonGenerator
 	| JsonLab
@@ -40,114 +47,33 @@ export type JsonGroupBuilding =
 	| JsonReactor
 	| JsonSolarPanel;
 
+/**
+ * Correlates with <Material />
+ */
 export type JsonGroupMaterial = JsonFluid | JsonItem;
 
-export type JsonGroupAny =
-	| JsonGroupBuilding
-	| JsonGroupMaterial
-	| JsonInserter
-	| JsonRecipe
-	| JsonTechnology
-	| JsonTransportBelt;
-
-type FragmentName = {
-	localised_name: string[];
-};
-/**
- * JSON objects
- */
-export type JsonAssemblingMachine = FragmentName & {
-	allowed_effects: PrimitiveEffects;
-	burner_effectivity: PrimitiveMultiplier;
-	crafting_categories: PrimitiveCraftingCategories;
-	crafting_speed: PrimitiveMultiplier;
-	drain: PrimitiveEnergyUsage;
-	emissions: number;
-	energy_usage: PrimitiveEnergyUsage;
-	fuel_categories: PrimitiveFuelCategories;
-	ingredient_count: number;
-	localised_name: string[];
-	module_inventory_size: number;
-	name: string;
-	pollution: number;
-	type: PrimitiveType;
-};
-export type JsonBoiler = FragmentName & {
-	burner_effectivity: PrimitiveMultiplier;
-	drain: PrimitiveEnergyUsage;
-	emissions: number;
-	fuel_categories: PrimitiveFuelCategories;
-	input_fluid: string;
-	localised_name: string[];
-	max_energy_usage: PrimitiveEnergyUsage;
-	name: string;
-	output_fluid: string;
-	pollution: number;
-	target_temperature: PrimitiveTemperature;
-};
-export type JsonFluid = FragmentName & {
-	default_temperature: PrimitiveTemperature;
-	emissions_multiplier: PrimitiveMultiplier;
+export type JsonFluid = F_Name & {
+	default_temperature: P_Temperature;
+	emissions_multiplier: P_Multiplier;
 	fuel_value: number;
-	localised_name: string[];
-	max_temperature: PrimitiveTemperature;
-	name: string;
+	max_temperature: P_Temperature;
 	order: string;
 };
-export type JsonFurnace = FragmentName & {
-	allowed_effects: PrimitiveEffects;
-	burner_effectivity: PrimitiveMultiplier;
-	crafting_categories: PrimitiveCraftingCategories;
-	crafting_speed: PrimitiveMultiplier;
-	drain: PrimitiveEnergyUsage;
-	emissions: number;
-	energy_usage: PrimitiveEnergyUsage;
-	fuel_categories: PrimitiveFuelCategories;
-	ingredient_count: number;
-	localised_name: string[];
-	module_inventory_size: number;
-	name: string;
-	pollution: number;
-	type: PrimitiveType;
-};
-export type JsonGenerator = FragmentName & {
-	drain: PrimitiveEnergyUsage;
-	effectivity: PrimitiveMultiplier;
-	emissions: number;
-	fluid_usage_per_tick: number;
-	localised_name: string[];
-	max_energy_output: number;
-	maximum_temperature: PrimitiveTemperature;
-	name: string;
-	pollution: number;
-};
-export type JsonInserter = FragmentName & {
-	burner_effectivity: PrimitiveMultiplier;
-	drain: PrimitiveEnergyUsage;
-	emissions: number;
-	fuel_categories: PrimitiveFuelCategories;
-	inserter_extension_speed;
-	inserter_rotation_speed;
-	localised_name: string[];
-	max_energy_usage: PrimitiveEnergyUsage;
-	name: string;
-	pollution: number;
-};
-export type JsonItem = FragmentName & {
+
+export type JsonItem = F_Name & {
 	attack_parameters;
 	burnt_result;
-	category;
+	// If this item is a module of some kind, which kind is it?:
+	category: 'speed' | 'effectivity' | 'productivity';
 	equipment_grid;
 	fuel_acceleration_multiplier;
 	fuel_category;
 	fuel_top_speed_multiplier;
 	fuel_value: number;
 	limitations: {} | string[];
-	localised_name: string[];
 	module_effects: {
 		[name: string]: { bonus: number };
 	};
-	name: string;
 	order: string;
 	place_result: string;
 	rocket_launch_products?: {
@@ -157,76 +83,148 @@ export type JsonItem = FragmentName & {
 		catalyst_amount: number;
 	}[];
 	tier: numbe;
-	type: PrimitiveType;
+	type: P_Type;
 };
-export type JsonLab = FragmentName & {
-	drain: PrimitiveEnergyUsage;
+
+// export type JsonGroupAny =
+// 	| JsonBuilding
+// 	| JsonGroupMaterial
+// 	| JsonInserter
+// 	| JsonRecipe
+// 	| JsonTechnology
+// 	| JsonTransportBelt;
+
+/**
+ * JSON objects
+ */
+type F_Building_Production = {
+	crafting_categories: P_CraftingCategories;
+	crafting_speed: P_Multiplier;
+	ingredient_count: number;
+	module_inventory_size: number;
+};
+type F_Building_Fuelled = {
+	burner_effectivity: P_Multiplier;
+	fuel_categories: P_FuelCategories;
+};
+export type JsonAssemblingMachine = F_Name &
+	F_Building_Production &
+	F_Building_Fuelled & {
+		allowed_effects: P_Effects;
+		drain: P_EnergyUsage;
+		emissions: number;
+		energy_usage: P_EnergyUsage;
+		pollution: number;
+		type: P_Type;
+	};
+export type JsonFurnace = F_Name &
+	F_Building_Production &
+	F_Building_Fuelled & {
+		allowed_effects: P_Effects;
+		drain: P_EnergyUsage;
+		emissions: number;
+		energy_usage: P_EnergyUsage;
+		pollution: number;
+		type: P_Type;
+	};
+export type JsonBoiler = F_Name &
+	F_Building_Fuelled & {
+		drain: P_EnergyUsage;
+		emissions: number;
+		input_fluid: string;
+		max_energy_usage: P_EnergyUsage;
+		output_fluid: string;
+		pollution: number;
+		target_temperature: P_Temperature;
+	};
+export type JsonGenerator = F_Name & {
+	drain: P_EnergyUsage;
+	effectivity: P_Multiplier;
 	emissions: number;
-	energy_usage: PrimitiveEnergyUsage;
+	fluid_usage_per_tick: number;
+	max_energy_output: number;
+	maximum_temperature: P_Temperature;
+	pollution: number;
+};
+export type JsonInserter = F_Name &
+	F_Building_Fuelled & {
+		drain: P_EnergyUsage;
+		emissions: number;
+		inserter_extension_speed;
+		inserter_rotation_speed;
+		max_energy_usage: P_EnergyUsage;
+		pollution: number;
+	};
+export type JsonLab = F_Name & {
+	drain: P_EnergyUsage;
+	emissions: number;
+	energy_usage: P_EnergyUsage;
 	lab_inputs: string[];
-	localised_name: string[];
-	name: string;
 	pollution: number;
 	researching_speed;
 };
-export type JsonMiningDrill = FragmentName & {
-	allowed_effects: PrimitiveEffects;
-	burner_effectivity: PrimitiveMultiplier;
-	drain: PrimitiveEnergyUsage;
-	emissions: number;
-	energy_usage: PrimitiveEnergyUsage;
-	fuel_categories: PrimitiveFuelCategories;
-	localised_name: string[];
-	mining_speed: PrimitiveMultiplier;
-	name: string;
-	pollution: number;
-	resource_categories: {
-		[name: string]: boolean;
+export type JsonMiningDrill = F_Name &
+	F_Building_Fuelled & {
+		allowed_effects: P_Effects;
+		drain: P_EnergyUsage;
+		emissions: number;
+		energy_usage: P_EnergyUsage;
+		mining_speed: P_Multiplier;
+		pollution: number;
+		resource_categories: {
+			[name: string]: boolean;
+		};
 	};
-};
-export type JsonReactor = FragmentName & {
-	burner_effectivity: PrimitiveMultiplier;
-	emissions: number;
-	fuel_categories: PrimitiveFuelCategories;
-	localised_name: string[];
-	max_energy_usage: PrimitiveEnergyUsage;
+export type JsonReactor = F_Name &
+	F_Building_Fuelled & {
+		emissions: number;
+		max_energy_usage: P_EnergyUsage;
+		neighbour_bonus;
+		pollution: number;
+	};
+export type JsonRecipeIngredient = {
+	type: 'item' | 'fluid';
 	name: string;
-	neighbour_bonus;
-	pollution: number;
+	amount: number;
 };
-export type JsonRecipe = FragmentName & {
-	category;
+
+export type JsonRecipeProduct = {
+	type: 'item' | 'fluid';
+	name: string;
+	catalyst_amount?: number;
+
+	amount: number;
+	amount_min: number;
+	amount_max: number;
+	probability: number;
+};
+
+export type JsonRecipe = F_Name & {
+	// May be mod-specific strings, like "angels-tree-desert"
+	category: string;
 	energy;
 	group;
-	ingredients;
-	localised_name: string[];
-	name: string;
+	ingredients: JsonRecipeIngredient[];
 	order: string;
-	products;
+	products: JsonRecipeProduct[];
 	subgroup;
 };
-export type JsonSolarPanel = FragmentName & {
-	drain: PrimitiveEnergyUsage;
+export type JsonSolarPanel = F_Name & {
+	drain: P_EnergyUsage;
 	emissions: number;
-	localised_name: string[];
-	name: string;
 	pollution: number;
 	production;
 };
-export type JsonTechnology = FragmentName & {
+export type JsonTechnology = F_Name & {
 	effects;
-	localised_name: string[];
 	max_level;
-	name: string;
 	prerequisites;
 	research_unit_count;
 	research_unit_count_formula;
 	research_unit_energy;
 	research_unit_ingredients;
 };
-export type JsonTransportBelt = FragmentName & {
+export type JsonTransportBelt = F_Name & {
 	belt_speed;
-	localised_name: string[];
-	name: string;
 	pollution: number;
 };
