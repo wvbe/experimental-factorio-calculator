@@ -1,28 +1,13 @@
-import styled from '@emotion/styled';
 import React, { FunctionComponent } from 'react';
-import {
-	JsonAssemblingMachine,
-	JsonFurnace,
-	JsonBuilding,
-	JsonGroupMaterial,
-	JsonRecipe
-} from '../data/json';
 import { Box, BOX_BUILDING } from '../components/Box';
+import { Table } from '../components/Text';
+import { JsonAssemblingMachine, JsonBuilding, JsonGroupMaterial, JsonRecipe } from '../data/json';
 import { Material } from './Material';
 import { Recipe } from './Recipe';
-import { Table } from '../components/Text';
 
 type InputMaterial = {
 	material: JsonGroupMaterial;
 	quantity: number;
-};
-
-const BuildingDetailsProduction: FunctionComponent<{
-	item: JsonAssemblingMachine | JsonFurnace;
-}> = ({ item }) => {
-	return (
-		<Table data={{ Speed: item.crafting_speed ? item.crafting_speed : <em>No speed</em> }} />
-	);
 };
 
 type BuildingProps = {

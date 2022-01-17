@@ -186,18 +186,29 @@ export type JsonRecipeIngredient = {
 	type: 'item' | 'fluid';
 	name: string;
 	amount: number;
+	amount_min: undefined;
+	amount_max: undefined;
+	probability: undefined;
 };
 
 export type JsonRecipeProduct = {
 	type: 'item' | 'fluid';
 	name: string;
 	catalyst_amount?: number;
-
-	amount: number;
-	amount_min: number;
-	amount_max: number;
-	probability: number;
-};
+} & (
+	| {
+			amount: number;
+			amount_min: undefined;
+			amount_max: undefined;
+			probability: undefined;
+	  }
+	| {
+			amount: undefined;
+			amount_min: number;
+			amount_max: number;
+			probability: number;
+	  }
+);
 
 export type JsonRecipe = F_Name & {
 	// May be mod-specific strings, like "angels-tree-desert"

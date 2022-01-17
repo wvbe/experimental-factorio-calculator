@@ -1,12 +1,10 @@
 {
-  "solar-panel" : {
-    "name" : "solar-panel",
-    "localised_name" : [
-      "entity-name.solar-panel"
-    ],
-    "production" : 60000,
-    "drain" : 0,
-    "emissions" : 0,
-    "pollution" : 0
-  }
+	"solar-panel": {
+		"name": "solar-panel",
+		"localised_name": ["entity-name.solar-panel"],
+		"production": 60000,
+		"drain": 0,
+		"emissions": 0,
+		"pollution": 0
+	}
 }

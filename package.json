@@ -16,8 +16,6 @@
 		"test": "tsdx test --passWithNoTests",
 		"lint": "tsdx lint",
 		"prepare": "tsdx build",
-		"size": "size-limit",
-		"analyze": "size-limit --why",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook"
 	},
@@ -40,16 +38,6 @@
 	"name": "factorio-planner-components",
 	"author": "wvbe",
 	"module": "dist/factorio-planner-components.esm.js",
-	"size-limit": [
-		{
-			"path": "dist/factorio-planner-components.cjs.production.min.js",
-			"limit": "10 KB"
-		},
-		{
-			"path": "dist/factorio-planner-components.esm.js",
-			"limit": "10 KB"
-		}
-	],
 	"dependencies": {
 		"@emotion/core": "^11.0.0",
 		"@emotion/styled": "^11.0.0"
@@ -74,5 +62,6 @@
 		"tsdx": "^0.13.3",
 		"tslib": "^2.0.1",
 		"typescript": "^4.0.3"
-	}
+	},
+	"homepage": "."
 }

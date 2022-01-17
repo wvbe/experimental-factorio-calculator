@@ -1,15 +1,9 @@
-import styled from '@emotion/styled';
 import React, { FunctionComponent } from 'react';
-import data from '../data';
-import {
-	JsonGroupMaterial,
-	JsonRecipe,
-	JsonRecipeIngredient,
-	JsonRecipeProduct
-} from '../data/json';
 import { Box, BOX_RECIPE } from '../components/Box';
-import { Material } from './Material';
 import { Table } from '../components/Text';
+import data from '../data';
+import { JsonRecipe, JsonRecipeIngredient, JsonRecipeProduct } from '../data/json';
+import { Material } from './Material';
 
 const ItemFromIngredientOrProduct: FunctionComponent<JsonRecipeIngredient | JsonRecipeProduct> = ({
 	type,
@@ -25,10 +19,11 @@ const ItemFromIngredientOrProduct: FunctionComponent<JsonRecipeIngredient | Json
 			: amount_min !== undefined && amount_max !== undefined
 			? amount_min === amount_max
 				? amount_min
-				: [amount_min, amount_max]
+				: ([amount_min, amount_max] as [number, number])
 			: undefined;
 	return <Material material={item} quantity={quantity} />;
 };
+
 export const Recipe: FunctionComponent<{
 	recipe: JsonRecipe;
 	productionSpeedMultiplier?: number;
@@ -38,14 +33,14 @@ export const Recipe: FunctionComponent<{
 
 	const table = {
 		// @OTODO inputs are not interesting in visualizing a recipe. We nee to show the _ingedients_!
-		Inputs: recipe.ingredients.length ? (
+		Ingredients: recipe.ingredients.length ? (
 			recipe.ingredients.map((ingredient, i) => (
 				<ItemFromIngredientOrProduct key={i} {...ingredient} />
 			))
 		) : (
 			<em>No materials</em>
 		),
-		Outputs: recipe.products.length ? (
+		Products: recipe.products.length ? (
 			recipe.products.map((product, i) => (
 				<ItemFromIngredientOrProduct key={i} {...product} />
 			))

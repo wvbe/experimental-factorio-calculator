@@ -30,7 +30,7 @@ export const Material: FunctionComponent<{
 				: quantity !== undefined
 				? `${quantity}x `
 				: null}
-			{material ? material.name : '# NOT AN ITEM #'}
+			{material ? material.name : '(Unexisting material)'}
 		</StyledItem>
 	);
 };

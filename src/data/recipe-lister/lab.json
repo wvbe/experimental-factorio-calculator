@@ -1,35 +1,29 @@
 {
-  "escape-pod-lab" : {
-    "name" : "escape-pod-lab",
-    "localised_name" : [
-      "entity-name.escape-pod-lab"
-    ],
-    "energy_usage" : 60000,
-    "lab_inputs" : [
-      "automation-science-pack"
-    ],
-    "researching_speed" : 1,
-    "pollution" : 0
-  },
-  "lab" : {
-    "name" : "lab",
-    "localised_name" : [
-      "entity-name.lab"
-    ],
-    "energy_usage" : 60000,
-    "lab_inputs" : [
-      "automation-science-pack",
-      "logistic-science-pack",
-      "chemical-science-pack",
-      "military-science-pack",
-      "production-science-pack",
-      "utility-science-pack",
-      "space-science-pack",
-      "token-bio"
-    ],
-    "researching_speed" : 1,
-    "drain" : 0,
-    "emissions" : 0,
-    "pollution" : 0
-  }
+	"escape-pod-lab": {
+		"name": "escape-pod-lab",
+		"localised_name": ["entity-name.escape-pod-lab"],
+		"energy_usage": 60000,
+		"lab_inputs": ["automation-science-pack"],
+		"researching_speed": 1,
+		"pollution": 0
+	},
+	"lab": {
+		"name": "lab",
+		"localised_name": ["entity-name.lab"],
+		"energy_usage": 60000,
+		"lab_inputs": [
+			"automation-science-pack",
+			"logistic-science-pack",
+			"chemical-science-pack",
+			"military-science-pack",
+			"production-science-pack",
+			"utility-science-pack",
+			"space-science-pack",
+			"token-bio"
+		],
+		"researching_speed": 1,
+		"drain": 0,
+		"emissions": 0,
+		"pollution": 0
+	}
 }

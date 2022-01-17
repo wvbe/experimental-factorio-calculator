@@ -1,215 +1,197 @@
 {
-  "stone-furnace" : {
-    "name" : "stone-furnace",
-    "localised_name" : [
-      "entity-name.stone-furnace"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 90000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 1,
-    "crafting_categories" : {
-      "smelting" : true
-    },
-    "module_inventory_size" : 0,
-    "allowed_effects" : {
-      "consumption" : false,
-      "speed" : false,
-      "productivity" : false,
-      "pollution" : false
-    },
-    "burner_effectivity" : 1,
-    "fuel_categories" : {
-      "chemical" : true
-    },
-    "emissions" : 3.7037037037037e-07,
-    "pollution" : 2
-  },
-  "steel-furnace" : {
-    "name" : "steel-furnace",
-    "localised_name" : [
-      "entity-name.steel-furnace"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 90000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "smelting" : true
-    },
-    "module_inventory_size" : 0,
-    "allowed_effects" : {
-      "consumption" : false,
-      "speed" : false,
-      "productivity" : false,
-      "pollution" : false
-    },
-    "burner_effectivity" : 1,
-    "fuel_categories" : {
-      "chemical" : true
-    },
-    "emissions" : 7.4074074074074e-07,
-    "pollution" : 4
-  },
-  "electric-furnace" : {
-    "name" : "electric-furnace",
-    "localised_name" : [
-      "entity-name.electric-furnace"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 180000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "smelting" : true
-    },
-    "module_inventory_size" : 2,
-    "allowed_effects" : {
-      "consumption" : true,
-      "speed" : true,
-      "productivity" : true,
-      "pollution" : true
-    },
-    "drain" : 6000,
-    "emissions" : 9.2592592592593e-08,
-    "pollution" : 1
-  },
-  "clarifier" : {
-    "name" : "clarifier",
-    "localised_name" : [
-      "entity-name.clarifier"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 30000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "angels-water-void" : true
-    },
-    "module_inventory_size" : 2,
-    "allowed_effects" : {
-      "consumption" : true,
-      "speed" : true,
-      "productivity" : false,
-      "pollution" : true
-    },
-    "drain" : 1000,
-    "emissions" : 6.6666666666667e-08,
-    "pollution" : 0.12
-  },
-  "valve-converter" : {
-    "name" : "valve-converter",
-    "localised_name" : [
-      "entity-name.valve-converter"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 30000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "angels-converter" : true
-    },
-    "module_inventory_size" : 0,
-    "allowed_effects" : {
-      "consumption" : false,
-      "speed" : false,
-      "productivity" : false,
-      "pollution" : false
-    },
-    "drain" : 1000,
-    "emissions" : 6.6666666666667e-08,
-    "pollution" : 0.12
-  },
-  "angels-flare-stack" : {
-    "name" : "angels-flare-stack",
-    "localised_name" : [
-      "entity-name.angels-flare-stack"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 30000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "angels-chemical-void" : true
-    },
-    "module_inventory_size" : 2,
-    "allowed_effects" : {
-      "consumption" : true,
-      "speed" : true,
-      "productivity" : false,
-      "pollution" : true
-    },
-    "drain" : 1000,
-    "emissions" : 6.6666666666667e-08,
-    "pollution" : 0.12
-  },
-  "composter" : {
-    "name" : "composter",
-    "localised_name" : [
-      "entity-name.composter"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 30000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "angels-bio-void" : true
-    },
-    "module_inventory_size" : 2,
-    "allowed_effects" : {
-      "consumption" : true,
-      "speed" : true,
-      "productivity" : false,
-      "pollution" : true
-    },
-    "drain" : 1000,
-    "emissions" : 6.6666666666667e-08,
-    "pollution" : 0.12
-  },
-  "bio-butchery" : {
-    "name" : "bio-butchery",
-    "localised_name" : [
-      "entity-name.bio-butchery"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 150000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "bio-butchery" : true
-    },
-    "module_inventory_size" : 2,
-    "allowed_effects" : {
-      "consumption" : true,
-      "speed" : true,
-      "productivity" : false,
-      "pollution" : true
-    },
-    "drain" : 5000,
-    "emissions" : 6.6666666666667e-08,
-    "pollution" : 0.6
-  },
-  "bio-hatchery" : {
-    "name" : "bio-hatchery",
-    "localised_name" : [
-      "entity-name.bio-hatchery"
-    ],
-    "type" : "furnace",
-    "energy_usage" : 150000,
-    "ingredient_count" : 1,
-    "crafting_speed" : 2,
-    "crafting_categories" : {
-      "bio-hatchery" : true
-    },
-    "module_inventory_size" : 2,
-    "allowed_effects" : {
-      "consumption" : true,
-      "speed" : true,
-      "productivity" : false,
-      "pollution" : true
-    },
-    "drain" : 5000,
-    "emissions" : 6.6666666666667e-08,
-    "pollution" : 0.6
-  }
+	"stone-furnace": {
+		"name": "stone-furnace",
+		"localised_name": ["entity-name.stone-furnace"],
+		"type": "furnace",
+		"energy_usage": 90000,
+		"ingredient_count": 1,
+		"crafting_speed": 1,
+		"crafting_categories": {
+			"smelting": true
+		},
+		"module_inventory_size": 0,
+		"allowed_effects": {
+			"consumption": false,
+			"speed": false,
+			"productivity": false,
+			"pollution": false
+		},
+		"burner_effectivity": 1,
+		"fuel_categories": {
+			"chemical": true
+		},
+		"emissions": 3.7037037037037e-7,
+		"pollution": 2
+	},
+	"steel-furnace": {
+		"name": "steel-furnace",
+		"localised_name": ["entity-name.steel-furnace"],
+		"type": "furnace",
+		"energy_usage": 90000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"smelting": true
+		},
+		"module_inventory_size": 0,
+		"allowed_effects": {
+			"consumption": false,
+			"speed": false,
+			"productivity": false,
+			"pollution": false
+		},
+		"burner_effectivity": 1,
+		"fuel_categories": {
+			"chemical": true
+		},
+		"emissions": 7.4074074074074e-7,
+		"pollution": 4
+	},
+	"electric-furnace": {
+		"name": "electric-furnace",
+		"localised_name": ["entity-name.electric-furnace"],
+		"type": "furnace",
+		"energy_usage": 180000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"smelting": true
+		},
+		"module_inventory_size": 2,
+		"allowed_effects": {
+			"consumption": true,
+			"speed": true,
+			"productivity": true,
+			"pollution": true
+		},
+		"drain": 6000,
+		"emissions": 9.2592592592593e-8,
+		"pollution": 1
+	},
+	"clarifier": {
+		"name": "clarifier",
+		"localised_name": ["entity-name.clarifier"],
+		"type": "furnace",
+		"energy_usage": 30000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"angels-water-void": true
+		},
+		"module_inventory_size": 2,
+		"allowed_effects": {
+			"consumption": true,
+			"speed": true,
+			"productivity": false,
+			"pollution": true
+		},
+		"drain": 1000,
+		"emissions": 6.6666666666667e-8,
+		"pollution": 0.12
+	},
+	"valve-converter": {
+		"name": "valve-converter",
+		"localised_name": ["entity-name.valve-converter"],
+		"type": "furnace",
+		"energy_usage": 30000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"angels-converter": true
+		},
+		"module_inventory_size": 0,
+		"allowed_effects": {
+			"consumption": false,
+			"speed": false,
+			"productivity": false,
+			"pollution": false
+		},
+		"drain": 1000,
+		"emissions": 6.6666666666667e-8,
+		"pollution": 0.12
+	},
+	"angels-flare-stack": {
+		"name": "angels-flare-stack",
+		"localised_name": ["entity-name.angels-flare-stack"],
+		"type": "furnace",
+		"energy_usage": 30000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"angels-chemical-void": true
+		},
+		"module_inventory_size": 2,
+		"allowed_effects": {
+			"consumption": true,
+			"speed": true,
+			"productivity": false,
+			"pollution": true
+		},
+		"drain": 1000,
+		"emissions": 6.6666666666667e-8,
+		"pollution": 0.12
+	},
+	"composter": {
+		"name": "composter",
+		"localised_name": ["entity-name.composter"],
+		"type": "furnace",
+		"energy_usage": 30000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"angels-bio-void": true
+		},
+		"module_inventory_size": 2,
+		"allowed_effects": {
+			"consumption": true,
+			"speed": true,
+			"productivity": false,
+			"pollution": true
+		},
+		"drain": 1000,
+		"emissions": 6.6666666666667e-8,
+		"pollution": 0.12
+	},
+	"bio-butchery": {
+		"name": "bio-butchery",
+		"localised_name": ["entity-name.bio-butchery"],
+		"type": "furnace",
+		"energy_usage": 150000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"bio-butchery": true
+		},
+		"module_inventory_size": 2,
+		"allowed_effects": {
+			"consumption": true,
+			"speed": true,
+			"productivity": false,
+			"pollution": true
+		},
+		"drain": 5000,
+		"emissions": 6.6666666666667e-8,
+		"pollution": 0.6
+	},
+	"bio-hatchery": {
+		"name": "bio-hatchery",
+		"localised_name": ["entity-name.bio-hatchery"],
+		"type": "furnace",
+		"energy_usage": 150000,
+		"ingredient_count": 1,
+		"crafting_speed": 2,
+		"crafting_categories": {
+			"bio-hatchery": true
+		},
+		"module_inventory_size": 2,
+		"allowed_effects": {
+			"consumption": true,
+			"speed": true,
+			"productivity": false,
+			"pollution": true
+		},
+		"drain": 5000,
+		"emissions": 6.6666666666667e-8,
+		"pollution": 0.6
+	}
 }

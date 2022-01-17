@@ -1,17 +1,13 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import data from '../data';
-import { Recipe } from './Recipe';
+import { Recipe } from '../game-entities/Recipe';
+import { CONTROL_RECIPE } from './util';
 
 const meta: Meta = {
 	title: 'Recipes',
 	argTypes: {
-		name: {
-			control: {
-				type: 'text'
-			},
-			defaultValue: 'coal-liquefaction'
-		}
+		recipe: CONTROL_RECIPE
 	},
 	parameters: {
 		controls: { expanded: false }
@@ -20,5 +16,5 @@ const meta: Meta = {
 
 export default meta;
 
-export const s1: Story = ({ name }) => <Recipe recipe={data.recipe(name)} />;
+export const s1: Story = ({ recipe }) => <Recipe recipe={data.recipe(recipe)} />;
 s1.storyName = 'Recipe';

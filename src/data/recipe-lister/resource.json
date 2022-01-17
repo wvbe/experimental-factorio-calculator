@@ -1,9 +1,7 @@
 {
 	"coal": {
 		"name": "coal",
-		"localised_name": [
-			"entity-name.coal"
-		],
+		"localised_name": ["entity-name.coal"],
 		"resource_category": "basic-solid",
 		"mineable_properties": {
 			"minable": true,
@@ -6266,9 +6264,7 @@
 	},
 	"angels-ore1": {
 		"name": "angels-ore1",
-		"localised_name": [
-			"entity-name.angels-ore1"
-		],
+		"localised_name": ["entity-name.angels-ore1"],
 		"resource_category": "basic-solid",
 		"mineable_properties": {
 			"minable": true,
@@ -12531,9 +12527,7 @@
 	},
 	"angels-ore2": {
 		"name": "angels-ore2",
-		"localised_name": [
-			"entity-name.angels-ore2"
-		],
+		"localised_name": ["entity-name.angels-ore2"],
 		"resource_category": "basic-solid",
 		"mineable_properties": {
 			"minable": true,
@@ -16320,9 +16314,7 @@
 	},
 	"angels-ore3": {
 		"name": "angels-ore3",
-		"localised_name": [
-			"entity-name.angels-ore3"
-		],
+		"localised_name": ["entity-name.angels-ore3"],
 		"resource_category": "basic-solid",
 		"mineable_properties": {
 			"minable": true,
@@ -22585,9 +22577,7 @@
 	},
 	"angels-ore4": {
 		"name": "angels-ore4",
-		"localised_name": [
-			"entity-name.angels-ore4"
-		],
+		"localised_name": ["entity-name.angels-ore4"],
 		"resource_category": "basic-solid",
 		"mineable_properties": {
 			"minable": true,
@@ -26374,9 +26364,7 @@
 	},
 	"uranium-ore": {
 		"name": "uranium-ore",
-		"localised_name": [
-			"entity-name.uranium-ore"
-		],
+		"localised_name": ["entity-name.uranium-ore"],
 		"resource_category": "basic-solid",
 		"mineable_properties": {
 			"minable": true,
@@ -30165,9 +30153,7 @@
 	},
 	"angels-fissure": {
 		"name": "angels-fissure",
-		"localised_name": [
-			"entity-name.angels-fissure"
-		],
+		"localised_name": ["entity-name.angels-fissure"],
 		"resource_category": "angels-fissure",
 		"mineable_properties": {
 			"minable": true,
@@ -34022,9 +34008,7 @@
 	},
 	"angels-natural-gas": {
 		"name": "angels-natural-gas",
-		"localised_name": [
-			"entity-name.angels-natural-gas"
-		],
+		"localised_name": ["entity-name.angels-natural-gas"],
 		"resource_category": "basic-fluid",
 		"mineable_properties": {
 			"minable": true,
@@ -37879,9 +37863,7 @@
 	},
 	"crude-oil": {
 		"name": "crude-oil",
-		"localised_name": [
-			"entity-name.crude-oil"
-		],
+		"localised_name": ["entity-name.crude-oil"],
 		"resource_category": "basic-fluid",
 		"mineable_properties": {
 			"minable": true,
