@@ -5,6 +5,7 @@ export type BoxType = {
 	label?: string;
 	title?: string;
 	color?: string;
+	hasWarning?: boolean;
 };
 
 export const BOX_BUILDING: BoxType = {
@@ -16,7 +17,7 @@ export const BOX_RECIPE: BoxType = {
 	color: '#91c79d'
 };
 
-const StyledBox = styled.div<{ color: string }>`
+const StyledBox = styled.div<{ color: string; hasWarning: boolean }>`
 	font-family: sans-serif;
 	white-space: pre-wrap;
 	display: block;
@@ -24,6 +25,10 @@ const StyledBox = styled.div<{ color: string }>`
 	border-radius: 5px;
 	padding: 0.25em;
 	position: relative;
+	${({ hasWarning }) =>
+		hasWarning
+			? `background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(241, 241, 241, 1) 10px, rgba(241, 241, 241, 1) 20px )`
+			: null}
 `;
 const StyledBoxHeading = styled.div`
 	display: flex;
@@ -42,9 +47,9 @@ const StyledBoxLabel = styled.label<{ color: string }>`
 const StyledBoxContents = styled.div``;
 
 export const Box: FunctionComponent<BoxType> = (props) => {
-	const { color, label, title, children } = { color: '#ccc', ...props };
+	const { color, label, title, children, hasWarning } = { color: '#ccc', ...props };
 	return (
-		<StyledBox color={color}>
+		<StyledBox color={color} hasWarning={hasWarning}>
 			<StyledBoxHeading>
 				<StyledBoxTitle>{title}</StyledBoxTitle>
 				{label && <StyledBoxLabel color={color}>{label}</StyledBoxLabel>}

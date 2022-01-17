@@ -26,8 +26,9 @@ const ItemFromIngredientOrProduct: FunctionComponent<JsonRecipeIngredient | Json
 
 export const Recipe: FunctionComponent<{
 	recipe: JsonRecipe;
+	hasWarning?: boolean;
 	productionSpeedMultiplier?: number;
-}> = ({ recipe, productionSpeedMultiplier = 1 }) => {
+}> = ({ recipe, hasWarning, productionSpeedMultiplier = 1 }) => {
 	// const recipeIsCompatible = recipe ? isRecipeCompatibleWithBuilding(recipe, item) : undefined;
 	const productionTime = recipe.energy / productionSpeedMultiplier;
 
@@ -50,7 +51,12 @@ export const Recipe: FunctionComponent<{
 		Time: `${productionTime}s, ${1 / productionTime} per tick`
 	};
 	return (
-		<Box {...BOX_RECIPE} title={recipe.name}>
+		<Box
+			label="Recipe"
+			color={hasWarning ? 'red' : '#91c79d'}
+			title={recipe.name}
+			hasWarning={hasWarning}
+		>
 			<Table data={table} />
 		</Box>
 	);
