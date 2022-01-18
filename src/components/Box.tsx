@@ -49,7 +49,7 @@ const StyledBoxContents = styled.div``;
 export const Box: FunctionComponent<BoxType> = (props) => {
 	const { color, label, title, children, hasWarning } = { color: '#ccc', ...props };
 	return (
-		<StyledBox color={color} hasWarning={hasWarning}>
+		<StyledBox color={color} hasWarning={!!hasWarning}>
 			<StyledBoxHeading>
 				<StyledBoxTitle>{title}</StyledBoxTitle>
 				{label && <StyledBoxLabel color={color}>{label}</StyledBoxLabel>}

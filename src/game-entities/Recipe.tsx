@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Box, BOX_RECIPE } from '../components/Box';
+import { Box } from '../components/Box';
 import { Table } from '../components/Text';
 import data from '../data';
 import { JsonRecipe, JsonRecipeIngredient, JsonRecipeProduct } from '../data/json';

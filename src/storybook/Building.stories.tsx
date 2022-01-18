@@ -7,9 +7,6 @@ export default {
 	title: 'Buildings',
 	argTypes: {
 		building: CONTROL_BUILDING
-	},
-	parameters: {
-		controls: { expanded: false }
 	}
 } as Meta;
 
